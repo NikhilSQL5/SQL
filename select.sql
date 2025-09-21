@@ -17,3 +17,5 @@
 	 10. COOL STUFF - Additional SQL Features
 =================================================================================
 */
+
+select * from table_name

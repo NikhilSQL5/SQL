@@ -17,4 +17,3 @@ SELECT
 *,
 SUM (cid) over(PARTITION BY cid) [Total Order]
 FROM Orders
-

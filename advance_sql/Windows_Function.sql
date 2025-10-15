@@ -25,3 +25,17 @@ SELECT TOP 10
 *,
 RANK() OVER( PARTITION BY cid ORDER BY order_date DESC) [Total Order]
 FROM Orders
+SELECT 
+c.cid,
+c.fname +' '+c.lname [Customer Name],
+p.product_name,
+p.price,
+o.order_date,
+o.order_status,
+RANK() OVER( PARTITION BY c.cid ORDER BY o.order_date DESC) [Total Order]
+FROM Orders o
+RIGHT JOIN Customer c
+ON c.cid = o.cid
+RIGHT JOIN Product p
+ON p.pid = o.pid
+WHERE c.cid IS NOT NULL

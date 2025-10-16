@@ -39,3 +39,17 @@ ON c.cid = o.cid
 RIGHT JOIN Product p
 ON p.pid = o.pid
 WHERE c.cid IS NOT NULL
+SELECT 
+c.cid,
+c.fname +' '+c.lname [Customer Name],
+p.product_name,
+p.price,
+o.order_date,
+o.order_status,
+SUM(p.price) over(ORDER BY p.pid  ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW ) [Total sales]
+FROM Orders o
+RIGHT JOIN Customer c
+ON c.cid = o.cid
+RIGHT JOIN Product p
+ON p.pid = o.pid
+WHERE c.cid IS NOT NULL

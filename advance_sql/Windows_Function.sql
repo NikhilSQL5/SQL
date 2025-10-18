@@ -53,3 +53,16 @@ ON c.cid = o.cid
 RIGHT JOIN Product p
 ON p.pid = o.pid
 WHERE c.cid IS NOT NULL
+
+select top 3
+*,
+SUM(price) over(ORDER BY pid  ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW ) [Total sales]
+from Product
+
+/*unbounded preceding and unbounded following*/
+SELECT 
+pid,
+product_name,
+price,
+SUM(price) OVER(ORDER BY pid ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) [TOTAL SALES]
+FROM Product

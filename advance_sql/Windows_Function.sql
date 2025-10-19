@@ -66,3 +66,11 @@ product_name,
 price,
 SUM(price) OVER(ORDER BY pid ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) [TOTAL SALES]
 FROM Product
+
+/*unbounded preceding and current row*/
+SELECT 
+pid,
+product_name,
+price,
+SUM(price) OVER(ORDER BY pid ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) [RUNNING TOTAL SALES]
+FROM Product

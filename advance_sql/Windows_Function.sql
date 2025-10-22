@@ -83,26 +83,10 @@ price,
 SUM(price) OVER(ORDER BY pid ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) [AVG_OF_3_DAYS]
 FROM Product
 
-/*2 preceding and current row*/
+/*range unbounded preceding and current row*/
 SELECT 
 pid,
 product_name,
 price,
-SUM(price) OVER(ORDER BY pid ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) [AVG_OF_3_DAYS]
-FROM Product
-
-/*2 preceding and current row*/
-SELECT 
-pid,
-product_name,
-price,
-SUM(price) OVER(ORDER BY pid ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) [AVG_OF_3_DAYS]
-FROM Product
-
-/*2 preceding and current row*/
-SELECT 
-pid,
-product_name,
-price,
-SUM(price) OVER(ORDER BY pid ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) [AVG_OF_3_DAYS]
+SUM(price) OVER(ORDER BY price RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) [RUNNING TOTAL SALES]
 FROM Product

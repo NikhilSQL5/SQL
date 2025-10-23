@@ -90,3 +90,11 @@ product_name,
 price,
 SUM(price) OVER(ORDER BY price RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) [RUNNING TOTAL SALES]
 FROM Product
+
+/*Row Number*/
+SELECT 
+pid,
+product_name,
+price,
+ROW_NUMBER () OVER(ORDER BY price ) [Row Number]
+FROM Product

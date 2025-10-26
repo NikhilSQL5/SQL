@@ -99,10 +99,11 @@ price,
 ROW_NUMBER () OVER(ORDER BY price ) [Row Number]
 FROM Product
 
-/*Row Number*/
+/*Rank*/
 SELECT 
 pid,
 product_name,
 price,
-ROW_NUMBER () OVER(ORDER BY price ) [Row Number]
+RANK() OVER(ORDER BY price ) [Rank]
 FROM Product
+

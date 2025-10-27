@@ -107,3 +107,10 @@ price,
 RANK() OVER(ORDER BY price ) [Rank]
 FROM Product
 
+/*Dense Rank*/
+SELECT 
+pid,
+product_name,
+price,
+DENSE_RANK() OVER(ORDER BY price ) [DENSE Rank]
+FROM Product

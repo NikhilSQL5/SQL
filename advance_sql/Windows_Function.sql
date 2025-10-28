@@ -114,3 +114,12 @@ product_name,
 price,
 DENSE_RANK() OVER(ORDER BY price ) [DENSE Rank]
 FROM Product
+
+SELECT 
+pid,
+product_name,
+price,
+ROW_NUMBER () OVER(ORDER BY price ) [Row Number],
+RANK() OVER(ORDER BY price ) [Rank],
+DENSE_RANK() OVER(ORDER BY price ) [DENSE Rank]
+FROM Product

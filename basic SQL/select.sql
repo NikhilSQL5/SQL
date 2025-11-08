@@ -54,3 +54,13 @@ WHERE score != 0
 SELECT *
 FROM customers
 WHERE country = 'Germany'
+
+/* ==============================================================================
+   ORDER BY
+=============================================================================== */
+
+/* Retrieve all customers and 
+   sort the results by the highest score first. */
+SELECT *
+FROM customers
+ORDER BY score DESC

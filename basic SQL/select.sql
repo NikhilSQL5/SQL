@@ -64,3 +64,9 @@ WHERE country = 'Germany'
 SELECT *
 FROM customers
 ORDER BY score DESC
+	
+/* Retrieve all customers and 
+   sort the results by the country. */
+SELECT *
+FROM customers
+ORDER BY country ASC

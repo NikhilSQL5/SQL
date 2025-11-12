@@ -87,3 +87,14 @@ SELECT
 FROM customers
 WHERE score != 0
 ORDER BY score DESC
+
+/* ==============================================================================
+   GROUP BY
+=============================================================================== */
+
+-- Find the total score for each country
+SELECT 
+    country,
+    SUM(score) AS total_score
+FROM customers
+GROUP BY country

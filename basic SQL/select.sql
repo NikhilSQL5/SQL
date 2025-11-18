@@ -143,3 +143,11 @@ HAVING AVG(score) > 430
 -- Return Unique list of all countries
 SELECT DISTINCT country
 FROM customers
+
+/* ==============================================================================
+   TOP
+=============================================================================== */
+
+-- Retrieve only 3 Customers
+SELECT TOP 3 *
+FROM customers

@@ -156,3 +156,8 @@ FROM customers
 SELECT TOP 3 *
 FROM customers
 ORDER BY score DESC
+
+-- Retrieve the Lowest 2 Customers based on the score
+SELECT TOP 2 *
+FROM customers
+ORDER BY score ASC

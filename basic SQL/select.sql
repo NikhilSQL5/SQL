@@ -184,3 +184,11 @@ WHERE score != 0
 GROUP BY country
 HAVING AVG(score) > 430
 ORDER BY AVG(score) DESC
+
+/* ============================================================================== 
+   COOL STUFF - Additional SQL Features
+=============================================================================== */
+
+-- Execute multiple queries at once
+SELECT * FROM customers;
+SELECT * FROM orders;

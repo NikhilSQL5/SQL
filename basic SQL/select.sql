@@ -192,3 +192,7 @@ ORDER BY AVG(score) DESC
 -- Execute multiple queries at once
 SELECT * FROM customers;
 SELECT * FROM orders;
+
+/* Selecting Static Data */
+-- Select a static or constant value without accessing any table
+SELECT 123 AS static_number;

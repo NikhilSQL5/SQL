@@ -198,3 +198,10 @@ SELECT * FROM orders;
 SELECT 123 AS static_number;
 
 SELECT 'Hello' AS static_string;
+
+-- Assign a constant value to a column in a query
+SELECT
+    id,
+    first_name,
+    'New Customer' AS customer_type
+FROM customers;

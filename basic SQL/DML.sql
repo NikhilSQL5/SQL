@@ -25,3 +25,8 @@ VALUES
 INSERT INTO customers (id, first_name, country, score)
 VALUES 
     (8, 'Max', 'USA', NULL)
+   
+-- Incorrect data type in values
+INSERT INTO customers (id, first_name, country, score)
+VALUES 
+	('Max', 9, 'Max', NULL)

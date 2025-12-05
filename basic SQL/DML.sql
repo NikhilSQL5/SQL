@@ -30,3 +30,7 @@ VALUES
 INSERT INTO customers (id, first_name, country, score)
 VALUES 
 	('Max', 9, 'Max', NULL)
+
+-- Insert a new record with full column values
+INSERT INTO customers (id, first_name, country, score)
+VALUES (8, 'Max', 'USA', 368)

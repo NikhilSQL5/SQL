@@ -34,3 +34,8 @@ VALUES
 -- Insert a new record with full column values
 INSERT INTO customers (id, first_name, country, score)
 VALUES (8, 'Max', 'USA', 368)
+
+-- Insert a new record without specifying column names (not recommended)
+INSERT INTO customers 
+VALUES 
+    (9, 'Andreas', 'Germany', NULL)

@@ -35,6 +35,10 @@ VALUES
 INSERT INTO customers (id, first_name, country, score)
 VALUES (8, 'Max', 'USA', 368)
 
+-- Insert a record with only id and first_name (other columns will be NULL or default values)
+INSERT INTO customers (id, first_name)
+VALUES 
+    (10, 'Sahra')
 -- Insert a new record without specifying column names (not recommended)
 INSERT INTO customers 
 VALUES 

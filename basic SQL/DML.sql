@@ -54,3 +54,12 @@ SELECT
     NULL,
     'Unknown'
 FROM customers
+
+/* ============================================================================== 
+   UPDATE
+=============================================================================== */
+
+-- Change the score of customer with ID 6 to 0
+UPDATE customers
+SET score = 0
+WHERE id = 6

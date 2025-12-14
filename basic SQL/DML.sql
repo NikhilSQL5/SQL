@@ -79,3 +79,12 @@ WHERE score IS NULL
 UPDATE customers
 SET score = 0
 WHERE score IS NULL
+
+/* ============================================================================== 
+   DELETE
+=============================================================================== */
+
+-- Select customers with an ID greater than 5 before deleting
+SELECT *
+FROM customers
+WHERE id > 5

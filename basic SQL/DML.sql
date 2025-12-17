@@ -95,3 +95,6 @@ WHERE id > 5
 
 -- Delete all data from the persons table
 DELETE FROM persons
+	
+-- Faster method to delete all rows, especially useful for large tables
+TRUNCATE TABLE persons

@@ -13,3 +13,21 @@
      5. INTERSECT
 =================================================================================
 */
+
+/* ==============================================================================
+   RULES OF SET OPERATIONS
+===============================================================================*/
+
+/* RULE: Data Types
+   The data types of columns in each query should match.
+*/
+SELECT
+    FirstName,
+    LastName,
+    Country
+FROM Sales.Customers
+UNION
+SELECT
+    FirstName,
+    LastName
+FROM Sales.Employees;

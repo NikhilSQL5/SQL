@@ -31,3 +31,16 @@ SELECT
     FirstName,
     LastName
 FROM Sales.Employees;
+
+/* RULE: Data Types (Example)
+   The data types of columns in each query should match.
+*/
+SELECT
+    CustomerID,
+    LastName
+FROM Sales.Customers
+UNION
+SELECT
+    FirstName,
+    LastName
+FROM Sales.Employees;

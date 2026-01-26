@@ -44,3 +44,16 @@ SELECT
     FirstName,
     LastName
 FROM Sales.Employees;
+
+/* RULE: Column Order
+   The order of the columns in each query must be the same.
+*/
+SELECT
+    LastName,
+    CustomerID
+FROM Sales.Customers
+UNION
+SELECT
+    EmployeeID,
+    LastName
+FROM Sales.Employees;

@@ -57,3 +57,17 @@ SELECT
     EmployeeID,
     LastName
 FROM Sales.Employees;
+
+/* RULE: Column Aliases
+   The column names in the result set are determined by the column names
+   specified in the first SELECT statement.
+*/
+SELECT
+    CustomerID AS ID,
+    LastName AS Last_Name
+FROM Sales.Customers
+UNION
+SELECT
+    EmployeeID,
+    LastName
+FROM Sales.Employees;

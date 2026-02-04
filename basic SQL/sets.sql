@@ -72,4 +72,15 @@ SELECT
     LastName
 FROM Sales.Employees;
 
- 
+ /* RULE: Correct Columns
+   Ensure that the correct columns are used to maintain data consistency.
+*/
+SELECT
+    FirstName,
+    LastName
+FROM Sales.Customers
+UNION
+SELECT
+    LastName,
+    FirstName
+FROM Sales.Employees;

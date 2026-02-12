@@ -28,3 +28,12 @@
 SELECT 
     CONCAT(first_name, '-', country) AS full_info
 FROM customers 
+
+/* ============================================================================== 
+   LOWER() & UPPER() - Case Transformation
+=============================================================================== */
+
+-- Convert the first name to lowercase
+SELECT 
+    LOWER(first_name) AS lower_case_name
+FROM customers

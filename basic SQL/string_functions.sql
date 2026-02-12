@@ -27,4 +27,4 @@
 -- Concatenate first name and country into one column
 SELECT 
     CONCAT(first_name, '-', country) AS full_info
-FROM customers
+FROM customers 

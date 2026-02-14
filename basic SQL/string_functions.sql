@@ -42,3 +42,16 @@ FROM customers
 SELECT 
     UPPER(first_name) AS upper_case_name
 FROM customers
+
+/* ============================================================================== 
+   TRIM() - Remove White Spaces
+=============================================================================== */
+
+-- Find customers whose first name contains leading or trailing spaces
+SELECT 
+    first_name,
+	LEN(first_name) len_name,
+	LEN(TRIM(first_name)) len_trim_name,
+	LEN(first_name) - LEN(TRIM(first_name)) flag
+FROM customers
+WHERE LEN(first_name)  != LEN(TRIM(first_name))

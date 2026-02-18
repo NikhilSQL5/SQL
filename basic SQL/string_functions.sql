@@ -68,3 +68,13 @@ REPLACE('123-456-7890', '-', '/') AS clean_phone
 SELECT
 'report.txt' AS old_filename,
 REPLACE('report.txt', '.txt', '.csv') AS new_filename
+
+/* ============================================================================== 
+   LEN() - String Length & Trimming
+=============================================================================== */
+
+-- Calculate the length of each customer's first name
+SELECT 
+    first_name, 
+    LEN(first_name) AS name_length
+FROM customers

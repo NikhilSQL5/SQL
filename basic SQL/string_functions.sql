@@ -104,3 +104,13 @@ SELECT
     first_name,
     SUBSTRING(TRIM(first_name), 2, LEN(first_name)) AS trimmed_name
 FROM customers
+
+/* ==============================================================================
+   NESTING FUNCTIONS
+===============================================================================*/
+
+-- Nesting
+SELECT
+first_name, 
+UPPER(LOWER(first_name)) AS nesting
+FROM customers

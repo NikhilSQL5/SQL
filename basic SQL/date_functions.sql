@@ -33,3 +33,17 @@ SELECT
     '2025-08-20' AS HardCoded,
     GETDATE() AS Today
 FROM Sales.Orders;
+
+
+/* ==============================================================================
+   DATETRUNC() DATA AGGREGATION
+===============================================================================*/
+
+/* TASK 3:
+   Aggregate orders by year using DATETRUNC on CreationTime.
+*/
+SELECT
+    DATETRUNC(year, CreationTime) AS Creation,
+    COUNT(*) AS OrderCount
+FROM Sales.Orders
+GROUP BY DATETRUNC(year, CreationTime);

@@ -94,3 +94,16 @@ SELECT
     CreationTime,
     EOMONTH(CreationTime) AS EndOfMonth
 FROM Sales.Orders;
+
+/* ==============================================================================
+   EOMONTH()
+===============================================================================*/
+
+/* TASK 4:
+   Display OrderID, CreationTime, and the end-of-month date for CreationTime.
+*/
+SELECT
+    OrderID,
+    CreationTime,
+    EOMONTH(CreationTime) AS EndOfMonth
+FROM Sales.Orders;

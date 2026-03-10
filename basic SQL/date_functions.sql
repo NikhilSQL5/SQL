@@ -120,3 +120,16 @@ SELECT
     COUNT(*) AS TotalOrders
 FROM Sales.Orders
 GROUP BY YEAR(OrderDate);
+
+/* ==============================================================================
+   DATE PARTS | USE CASES
+===============================================================================*/
+
+/* TASK 5:
+   How many orders were placed each year?
+*/
+SELECT 
+    YEAR(OrderDate) AS OrderYear, 
+    COUNT(*) AS TotalOrders
+FROM Sales.Orders
+GROUP BY YEAR(OrderDate);

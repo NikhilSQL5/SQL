@@ -133,3 +133,12 @@ SELECT
     COUNT(*) AS TotalOrders
 FROM Sales.Orders
 GROUP BY YEAR(OrderDate);
+
+/* TASK 6:
+   How many orders were placed each month?
+*/
+SELECT 
+    MONTH(OrderDate) AS OrderMonth, 
+    COUNT(*) AS TotalOrders
+FROM Sales.Orders
+GROUP BY MONTH(OrderDate);

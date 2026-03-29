@@ -168,3 +168,23 @@ SELECT
     *
 FROM Sales.Orders
 WHERE MONTH(OrderDate) = 2;
+
+/* ==============================================================================
+   FORMAT()
+===============================================================================*/
+
+/* TASK 9:
+   Format CreationTime into various string representations.
+*/
+SELECT
+    OrderID,
+    CreationTime,
+    FORMAT(CreationTime, 'MM-dd-yyyy') AS USA_Format,
+    FORMAT(CreationTime, 'dd-MM-yyyy') AS EURO_Format,
+    FORMAT(CreationTime, 'dd') AS dd,
+    FORMAT(CreationTime, 'ddd') AS ddd,
+    FORMAT(CreationTime, 'dddd') AS dddd,
+    FORMAT(CreationTime, 'MM') AS MM,
+    FORMAT(CreationTime, 'MMM') AS MMM,
+    FORMAT(CreationTime, 'MMMM') AS MMMM
+FROM Sales.Orders;

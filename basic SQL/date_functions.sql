@@ -188,3 +188,15 @@ SELECT
     FORMAT(CreationTime, 'MMM') AS MMM,
     FORMAT(CreationTime, 'MMMM') AS MMMM
 FROM Sales.Orders;
+
+/* TASK 10:
+   Display CreationTime using a custom format:
+   Example: Day Wed Jan Q1 2025 12:34:56 PM
+*/
+SELECT
+    OrderID,
+    CreationTime,
+    'Day ' + FORMAT(CreationTime, 'ddd MMM') +
+    ' Q' + DATENAME(quarter, CreationTime) + ' ' +
+    FORMAT(CreationTime, 'yyyy hh:mm:ss tt') AS CustomFormat
+FROM Sales.Orders;

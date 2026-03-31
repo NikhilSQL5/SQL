@@ -200,3 +200,12 @@ SELECT
     ' Q' + DATENAME(quarter, CreationTime) + ' ' +
     FORMAT(CreationTime, 'yyyy hh:mm:ss tt') AS CustomFormat
 FROM Sales.Orders;
+
+/* TASK 11:
+   How many orders were placed each year, formatted by month and year (e.g., "Jan 25")?
+*/
+SELECT
+    FORMAT(CreationTime, 'MMM yy') AS OrderDate,
+    COUNT(*) AS TotalOrders
+FROM Sales.Orders
+GROUP BY FORMAT(CreationTime, 'MMM yy');

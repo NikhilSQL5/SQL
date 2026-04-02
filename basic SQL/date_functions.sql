@@ -225,3 +225,19 @@ SELECT
     CONVERT(VARCHAR, CreationTime, 32) AS [USA Std. Style:32],
     CONVERT(VARCHAR, CreationTime, 34) AS [EURO Std. Style:34]
 FROM Sales.Orders;
+
+/* ==============================================================================
+   CAST()
+===============================================================================*/
+
+/* TASK 13:
+   Convert data types using CAST.
+*/
+SELECT
+    CAST('123' AS INT) AS [String to Int],
+    CAST(123 AS VARCHAR) AS [Int to String],
+    CAST('2025-08-20' AS DATE) AS [String to Date],
+    CAST('2025-08-20' AS DATETIME2) AS [String to Datetime],
+    CreationTime,
+    CAST(CreationTime AS DATE) AS [Datetime to Date]
+FROM Sales.Orders;

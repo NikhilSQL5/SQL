@@ -256,3 +256,12 @@ SELECT
     DATEADD(month, 3, OrderDate) AS ThreeMonthsLater,
     DATEADD(year, 2, OrderDate) AS TwoYearsLater
 FROM Sales.Orders;
+
+/* TASK 15:
+   Calculate the age of employees.
+*/
+SELECT
+    EmployeeID,
+    BirthDate,
+    DATEDIFF(year, BirthDate, GETDATE()) AS Age
+FROM Sales.Employees;

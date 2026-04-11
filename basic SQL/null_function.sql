@@ -59,3 +59,14 @@ SELECT
     Quantity,
     Sales / NULLIF(Quantity, 0) AS Price
 FROM Sales.Orders;
+
+/* ==============================================================================
+   IS NULL - IS NOT NULL
+===============================================================================*/
+
+/* TASK 5: 
+   Identify the customers who have no scores 
+*/
+SELECT *
+FROM Sales.Customers
+WHERE Score IS NULL;

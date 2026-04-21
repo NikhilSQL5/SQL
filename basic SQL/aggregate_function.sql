@@ -9,3 +9,7 @@ FROM customers
 -- Find the total sales of all orders
 SELECT SUM(sales) AS total_sales
 FROM orders
+
+-- Find the average sales of all orders
+SELECT AVG(sales) AS avg_sales
+FROM orders

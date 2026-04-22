@@ -13,3 +13,7 @@ FROM orders
 -- Find the average sales of all orders
 SELECT AVG(sales) AS avg_sales
 FROM orders
+
+-- Find the highest score among customers
+SELECT MAX(score) AS max_score
+FROM customers

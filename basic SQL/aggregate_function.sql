@@ -17,3 +17,7 @@ FROM orders
 -- Find the highest score among customers
 SELECT MAX(score) AS max_score
 FROM customers
+
+-- Find the lowest score among customers
+SELECT MIN(score) AS min_score
+FROM customers

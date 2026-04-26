@@ -17,3 +17,14 @@
      7. SQL Window with GROUP BY
 =================================================================================
 */
+
+/* ==============================================================================
+   SQL WINDOW FUNCTIONS | BASICS
+===============================================================================*/
+
+/* TASK 1: 
+   Calculate the Total Sales Across All Orders 
+*/
+SELECT
+    SUM(Sales) AS Total_Sales
+FROM Sales.Orders;

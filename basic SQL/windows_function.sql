@@ -135,3 +135,19 @@ SELECT
         ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
     ) AS Total_Sales
 FROM Sales.Orders;
+
+/* TASK 9: 
+   Calculate Total Sales by Order Status from previous two orders only 
+*/
+SELECT
+    OrderID,
+    OrderDate,
+    ProductID,
+    OrderStatus,
+    Sales,
+    SUM(Sales) OVER (
+        PARTITION BY OrderStatus 
+        ORDER BY OrderDate 
+        ROWS 2 PRECEDING
+    ) AS Total_Sales
+FROM Sales.Orders;

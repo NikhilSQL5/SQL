@@ -183,3 +183,17 @@ SELECT
         ROWS UNBOUNDED PRECEDING
     ) AS Total_Sales
 FROM Sales.Orders;
+
+/* ==============================================================================
+   SQL WINDOW FUNCTIONS | GROUP BY
+===============================================================================*/
+
+/* TASK 12: 
+   Rank customers by their total sales 
+*/
+SELECT
+    CustomerID,
+    SUM(Sales) AS Total_Sales,
+    RANK() OVER (ORDER BY SUM(Sales) DESC) AS Rank_Customers
+FROM Sales.Orders
+GROUP BY CustomerID;

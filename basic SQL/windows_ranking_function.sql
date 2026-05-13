@@ -14,3 +14,19 @@
      5. CUME_DIST
 =================================================================================
 */
+
+/* ============================================================
+   SQL WINDOW RANKING | ROW_NUMBER, RANK, DENSE_RANK
+   ============================================================ */
+
+/* TASK 1:
+   Rank Orders Based on Sales from Highest to Lowest
+*/
+SELECT
+    OrderID,
+    ProductID,
+    Sales,
+    ROW_NUMBER() OVER (ORDER BY Sales DESC) AS SalesRank_Row,
+    RANK() OVER (ORDER BY Sales DESC) AS SalesRank_Rank,
+    DENSE_RANK() OVER (ORDER BY Sales DESC) AS SalesRank_Dense
+FROM Sales.Orders;

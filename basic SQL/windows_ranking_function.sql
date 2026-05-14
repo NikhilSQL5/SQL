@@ -30,3 +30,17 @@ SELECT
     RANK() OVER (ORDER BY Sales DESC) AS SalesRank_Rank,
     DENSE_RANK() OVER (ORDER BY Sales DESC) AS SalesRank_Dense
 FROM Sales.Orders;
+
+/* TASK 2:
+   Use Case | Top-N Analysis: Find the Highest Sale for Each Product
+*/
+SELECT *
+FROM (
+    SELECT
+        OrderID,
+        ProductID,
+        Sales,
+        ROW_NUMBER() OVER (PARTITION BY ProductID ORDER BY Sales DESC) AS RankByProduct
+    FROM Sales.Orders
+) AS TopProductSales
+WHERE RankByProduct = 1;

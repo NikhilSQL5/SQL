@@ -44,3 +44,17 @@ FROM (
     FROM Sales.Orders
 ) AS TopProductSales
 WHERE RankByProduct = 1;
+
+/* TASK 3:
+   Use Case | Bottom-N Analysis: Find the Lowest 2 Customers Based on Their Total Sales
+*/
+SELECT *
+FROM (
+    SELECT
+        CustomerID,
+        SUM(Sales) AS TotalSales,
+        ROW_NUMBER() OVER (ORDER BY SUM(Sales)) AS RankCustomers
+    FROM Sales.Orders
+    GROUP BY CustomerID
+) AS BottomCustomerSales
+WHERE RankCustomers <= 2;

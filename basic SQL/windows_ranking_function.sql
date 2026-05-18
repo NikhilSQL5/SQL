@@ -66,3 +66,16 @@ SELECT
     ROW_NUMBER() OVER (ORDER BY OrderID, OrderDate) AS UniqueID,
     *
 FROM Sales.OrdersArchive;
+
+/* TASK 5:
+   Use Case | Identify Duplicates:
+   Identify Duplicate Rows in 'Order Archive' and return a clean result without any duplicates
+*/
+SELECT *
+FROM (
+    SELECT
+        ROW_NUMBER() OVER (PARTITION BY OrderID ORDER BY CreationTime DESC) AS rn,
+        *
+    FROM Sales.OrdersArchive
+) AS UniqueOrdersArchive
+WHERE rn = 1;

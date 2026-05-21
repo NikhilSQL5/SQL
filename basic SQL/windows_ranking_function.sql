@@ -112,3 +112,11 @@ FROM (
         NTILE(3) OVER (ORDER BY Sales DESC) AS Buckets
     FROM Sales.Orders
 ) AS SalesBuckets;
+
+/* TASK 8:
+   Divide Orders into Groups for Processing
+*/
+SELECT 
+    NTILE(5) OVER (ORDER BY OrderID) AS Buckets,
+    *
+FROM Sales.Orders;

@@ -142,3 +142,4 @@ FROM (
     FROM Sales.Products
 ) AS PriceDistribution
 WHERE DistRank <= 0.4;
+

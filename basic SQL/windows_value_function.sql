@@ -39,3 +39,25 @@ FROM (
     FROM Sales.Orders
     GROUP BY MONTH(OrderDate)
 ) AS MonthlySales;
+
+/* TASK 2:
+   Customer Loyalty Analysis - Rank Customers Based on the Average Days Between Their Orders
+*/
+SELECT
+    CustomerID,
+    AVG(DaysUntilNextOrder) AS AvgDays,
+    RANK() OVER (ORDER BY COALESCE(AVG(DaysUntilNextOrder), 999999)) AS RankAvg
+FROM (
+    SELECT
+        OrderID,
+        CustomerID,
+        OrderDate AS CurrentOrder,
+        LEAD(OrderDate) OVER (PARTITION BY CustomerID ORDER BY OrderDate) AS NextOrder,
+        DATEDIFF(
+            day,
+            OrderDate,
+            LEAD(OrderDate) OVER (PARTITION BY CustomerID ORDER BY OrderDate)
+        ) AS DaysUntilNextOrder
+    FROM Sales.Orders
+) AS CustomerOrdersWithNext
+GROUP BY CustomerID;

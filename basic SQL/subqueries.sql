@@ -26,3 +26,8 @@
 SELECT
     AVG(Sales)
 FROM Sales.Orders;
+
+/* Row Query */
+SELECT
+    CustomerID
+FROM Sales.Orders;

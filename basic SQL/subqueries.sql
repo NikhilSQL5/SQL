@@ -31,3 +31,9 @@ FROM Sales.Orders;
 SELECT
     CustomerID
 FROM Sales.Orders;
+
+/* Table Query */
+SELECT
+    OrderID,
+    OrderDate
+FROM Sales.Orders;

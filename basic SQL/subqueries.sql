@@ -57,3 +57,21 @@ FROM (
     FROM Sales.Products
 ) AS t
 WHERE Price > AvgPrice;
+
+/* TASK 2:
+   Rank Customers based on their total amount of sales.
+*/
+-- Main Query
+SELECT
+    *,
+    RANK() OVER (ORDER BY TotalSales DESC) AS CustomerRank
+FROM (
+    -- Subquery
+    SELECT
+        CustomerID,
+        SUM(Sales) AS TotalSales
+    FROM Sales.Orders
+    GROUP BY CustomerID
+) AS t;
+
+/* 

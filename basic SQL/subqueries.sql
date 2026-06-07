@@ -88,3 +88,25 @@ SELECT
     Price,
     (SELECT COUNT(*) FROM Sales.Orders) AS TotalOrders -- Subquery
 FROM Sales.Products;
+
+/* ==============================================================================
+   SUBQUERY | JOIN CLAUSE
+===============================================================================*/
+
+/* TASK 4:
+   Show customer details along with their total sales.
+*/
+-- Main Query
+SELECT
+    c.*,
+    t.TotalSales
+FROM Sales.Customers AS c
+LEFT JOIN ( 
+    -- Subquery
+    SELECT
+        CustomerID,
+        SUM(Sales) AS TotalSales
+    FROM Sales.Orders
+    GROUP BY CustomerID
+) AS t
+    ON c.CustomerID = t.CustomerID;

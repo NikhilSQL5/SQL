@@ -110,3 +110,22 @@ LEFT JOIN (
     GROUP BY CustomerID
 ) AS t
     ON c.CustomerID = t.CustomerID;
+
+/* TASK 5:
+   Show all customer details and the total orders of each customer.
+*/
+-- Main Query
+SELECT
+    c.*,
+    o.TotalOrders
+FROM Sales.Customers AS c
+LEFT JOIN (
+    -- Subquery
+    SELECT
+        CustomerID,
+        COUNT(*) AS TotalOrders
+    FROM Sales.Orders
+    GROUP BY CustomerID
+) AS o
+    ON c.CustomerID = o.CustomerID;
+

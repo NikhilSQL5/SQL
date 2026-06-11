@@ -143,3 +143,22 @@ SELECT
     (SELECT AVG(Price) FROM Sales.Products) AS AvgPrice -- Subquery
 FROM Sales.Products
 WHERE Price > (SELECT AVG(Price) FROM Sales.Products); -- Subquery
+
+/* ==============================================================================
+   SUBQUERY | IN OPERATOR
+===============================================================================*/
+
+/* TASK 7:
+   Show the details of orders made by customers in Germany.
+*/
+-- Main Query
+SELECT
+    *
+FROM Sales.Orders
+WHERE CustomerID IN (
+    -- Subquery
+    SELECT
+        CustomerID
+    FROM Sales.Customers
+    WHERE Country = 'Germany'
+);

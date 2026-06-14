@@ -211,5 +211,3 @@ WHERE Gender = 'F'
       FROM Sales.Employees
       WHERE Gender = 'M'
   );
-
-/* 

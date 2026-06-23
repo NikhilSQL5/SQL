@@ -52,3 +52,6 @@ SELECT
 FROM Sales.Orders
 GROUP BY DATETRUNC(month, OrderDate);
 GO
+   
+-- Query the View
+SELECT * FROM Sales.V_Monthly_Summary;

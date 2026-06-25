@@ -60,3 +60,11 @@ SELECT * FROM Sales.V_Monthly_Summary;
 IF OBJECT_ID('Sales.V_Monthly_Summary', 'V') IS NOT NULL
     DROP VIEW Sales.V_Monthly_Summary;
 GO
+
+-- Query the View
+SELECT * FROM Sales.V_Monthly_Summary;
+
+-- Drop View if it exists
+IF OBJECT_ID('Sales.V_Monthly_Summary', 'V') IS NOT NULL
+    DROP VIEW Sales.V_Monthly_Summary;
+GO

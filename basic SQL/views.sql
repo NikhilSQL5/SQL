@@ -68,3 +68,13 @@ SELECT * FROM Sales.V_Monthly_Summary;
 IF OBJECT_ID('Sales.V_Monthly_Summary', 'V') IS NOT NULL
     DROP VIEW Sales.V_Monthly_Summary;
 GO
+
+-- Re-create the view with modified logic
+CREATE VIEW Sales.V_Monthly_Summary AS
+SELECT 
+    DATETRUNC(month, OrderDate) AS OrderMonth,
+    SUM(Sales) AS TotalSales,
+    COUNT(OrderID) AS TotalOrders
+FROM Sales.Orders
+GROUP BY DATETRUNC(month, OrderDate);
+GO

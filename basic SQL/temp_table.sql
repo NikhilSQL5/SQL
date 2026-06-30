@@ -13,3 +13,9 @@ SELECT
     *
 INTO #Orders
 FROM Sales.Orders;
+
+/* ==============================================================================
+   Step 2: Clean Data in Temporary Table
+============================================================================== */
+DELETE FROM #Orders
+WHERE OrderStatus = 'Delivered';

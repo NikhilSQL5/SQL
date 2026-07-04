@@ -53,3 +53,24 @@ GO
 EXEC GetCustomerSummary @Country = 'Germany';
 EXEC GetCustomerSummary @Country = 'USA';
 EXEC GetCustomerSummary;
+
+/* ==============================================================================
+   Parameters in Stored Procedure
+============================================================================== */
+
+-- Edit the Stored Procedure
+ALTER PROCEDURE GetCustomerSummary @Country NVARCHAR(50) = 'USA' AS
+BEGIN
+    -- Reports: Summary from Customers and Orders
+    SELECT
+        COUNT(*) AS TotalCustomers,
+        AVG(Score) AS AvgScore
+    FROM Sales.Customers
+    WHERE Country = @Country;
+END
+GO
+
+--Execute Stored Procedure
+EXEC GetCustomerSummary @Country = 'Germany';
+EXEC GetCustomerSummary @Country = 'USA';
+EXEC GetCustomerSummary;

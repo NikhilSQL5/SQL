@@ -31,3 +31,13 @@ BEGIN
     FROM INSERTED;
 END;
 GO
+
+-- Step 3: Insert New Data Into Employees
+INSERT INTO Sales.Employees
+VALUES (6, 'Maria', 'Doe', 'HR', '1988-01-12', 'F', 80000, 3);
+GO
+
+-- Check the Logs
+SELECT *
+FROM Sales.EmployeeLogs;
+GO

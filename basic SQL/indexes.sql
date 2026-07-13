@@ -24,3 +24,8 @@
 SELECT *
 INTO Sales.DBCustomers
 FROM Sales.Customers;
+
+-- Test Query: Select Data and Check the Execution Plan
+SELECT *
+FROM Sales.DBCustomers
+WHERE CustomerID = 1;

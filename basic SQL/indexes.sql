@@ -33,3 +33,7 @@ WHERE CustomerID = 1;
 -- Create a Clustered Index on Sales.DBCustomers using CustomerID
 CREATE CLUSTERED INDEX idx_DBCustomers_CustomerID
 ON Sales.DBCustomers (CustomerID);
+
+-- Attempt to create a second Clustered Index on the same table (will fail) 
+CREATE CLUSTERED INDEX idx_DBCustomers_CustomerID
+ON Sales.DBCustomers (CustomerID);

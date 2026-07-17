@@ -37,3 +37,8 @@ ON Sales.DBCustomers (CustomerID);
 -- Attempt to create a second Clustered Index on the same table (will fail) 
 CREATE CLUSTERED INDEX idx_DBCustomers_CustomerID
 ON Sales.DBCustomers (CustomerID);
+
+
+-- Drop the Clustered Index 
+DROP INDEX idx_DBCustomers_CustomerID
+ON Sales.DBCustomers;

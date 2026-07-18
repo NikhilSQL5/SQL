@@ -38,7 +38,11 @@ ON Sales.DBCustomers (CustomerID);
 CREATE CLUSTERED INDEX idx_DBCustomers_CustomerID
 ON Sales.DBCustomers (CustomerID);
 
-
 -- Drop the Clustered Index 
 DROP INDEX idx_DBCustomers_CustomerID
 ON Sales.DBCustomers;
+
+-- Test Query: Select Data with a Filter on LastName
+SELECT *
+FROM Sales.DBCustomers
+WHERE LastName = 'Brown';

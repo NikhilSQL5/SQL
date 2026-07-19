@@ -46,3 +46,7 @@ ON Sales.DBCustomers;
 SELECT *
 FROM Sales.DBCustomers
 WHERE LastName = 'Brown';
+
+-- Create a Non-Clustered Index on LastName
+CREATE NONCLUSTERED INDEX idx_DBCustomers_LastName
+ON Sales.DBCustomers (LastName);

@@ -54,3 +54,7 @@ ON Sales.DBCustomers (LastName);
 -- Create an additional Non-Clustered Index on FirstName
 CREATE INDEX idx_DBCustomers_FirstName
 ON Sales.DBCustomers (FirstName);
+
+-- Create a Composite (Composed) Index on Country and Score 
+CREATE INDEX idx_DBCustomers_CountryScore
+ON Sales.DBCustomers (Country, Score);

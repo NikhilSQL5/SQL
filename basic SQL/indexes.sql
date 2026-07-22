@@ -58,3 +58,9 @@ ON Sales.DBCustomers (FirstName);
 -- Create a Composite (Composed) Index on Country and Score 
 CREATE INDEX idx_DBCustomers_CountryScore
 ON Sales.DBCustomers (Country, Score);
+
+-- Query that uses the Composite Index
+SELECT *
+FROM Sales.DBCustomers
+WHERE Country = 'USA'
+  AND Score > 500;

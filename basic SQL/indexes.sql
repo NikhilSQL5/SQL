@@ -64,3 +64,9 @@ SELECT *
 FROM Sales.DBCustomers
 WHERE Country = 'USA'
   AND Score > 500;
+
+-- Query that likely won't use the Composite Index due to column order
+SELECT *
+FROM Sales.DBCustomers
+WHERE Score > 500
+  AND Country = 'USA';

@@ -95,3 +95,8 @@ WHERE Score > 500
 CREATE CLUSTERED COLUMNSTORE INDEX idx_DBCustomers_CS
 ON Sales.DBCustomers;
 GO
+
+-- Create a Non-Clustered Columnstore Index on the FirstName column
+CREATE NONCLUSTERED COLUMNSTORE INDEX idx_DBCustomers_CS_FirstName
+ON Sales.DBCustomers (FirstName);
+GO

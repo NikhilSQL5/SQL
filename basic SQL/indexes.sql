@@ -100,3 +100,11 @@ GO
 CREATE NONCLUSTERED COLUMNSTORE INDEX idx_DBCustomers_CS_FirstName
 ON Sales.DBCustomers (FirstName);
 GO
+
+-- Switch context to AdventureWorksDW2022 for FactInternetSales examples */
+USE AdventureWorksDW2022;
+
+-- Create a Heap Table from FactInternetSales
+SELECT *
+INTO FactInternetSales_HP
+FROM FactInternetSales;

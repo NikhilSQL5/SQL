@@ -108,3 +108,8 @@ USE AdventureWorksDW2022;
 SELECT *
 INTO FactInternetSales_HP
 FROM FactInternetSales;
+
+-- Create a RowStore Table from FactInternetSales
+SELECT *
+INTO FactInternetSales_RS
+FROM FactInternetSales;

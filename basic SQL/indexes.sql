@@ -113,3 +113,7 @@ FROM FactInternetSales;
 SELECT *
 INTO FactInternetSales_RS
 FROM FactInternetSales;
+
+-- Create a Clustered Index (RowStore) on FactInternetSales_RS
+CREATE CLUSTERED INDEX idx_FactInternetSales_RS_PK
+ON FactInternetSales_RS (SalesOrderNumber, SalesOrderLineNumber);

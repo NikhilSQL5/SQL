@@ -117,3 +117,12 @@ FROM FactInternetSales;
 -- Create a Clustered Index (RowStore) on FactInternetSales_RS
 CREATE CLUSTERED INDEX idx_FactInternetSales_RS_PK
 ON FactInternetSales_RS (SalesOrderNumber, SalesOrderLineNumber);
+
+-- Create a Columnstore Table from FactInternetSales
+SELECT *
+INTO FactInternetSales_CS
+FROM FactInternetSales;
+
+-- Create a Clustered Columnstore Index on FactInternetSales_CS
+CREATE CLUSTERED COLUMNSTORE INDEX idx_FactInternetSales_CS_PK
+ON FactInternetSales_CS;

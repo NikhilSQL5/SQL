@@ -126,3 +126,13 @@ FROM FactInternetSales;
 -- Create a Clustered Columnstore Index on FactInternetSales_CS
 CREATE CLUSTERED COLUMNSTORE INDEX idx_FactInternetSales_CS_PK
 ON FactInternetSales_CS;
+
+/* ==============================================================================
+   Unique Indexes
+============================================================================== */
+
+-- Attempt to create a Unique Index on the Category column in Sales.Products.
+--  Note: This may fail if duplicate values exist.
+
+CREATE UNIQUE INDEX idx_Products_Category
+ON Sales.Products (Category);

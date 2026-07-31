@@ -136,3 +136,7 @@ ON FactInternetSales_CS;
 
 CREATE UNIQUE INDEX idx_Products_Category
 ON Sales.Products (Category);
+
+-- Create a Unique Index on the Product column in Sales.Products
+CREATE UNIQUE INDEX idx_Products_Product
+ON Sales.Products (Product);

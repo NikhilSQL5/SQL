@@ -144,3 +144,12 @@ ON Sales.Products (Product);
 -- Test Insert: Attempt to insert a duplicate value (should fail if the constraint is enforced)
 INSERT INTO Sales.Products (ProductID, Product)
 VALUES (106, 'Caps');
+
+/* ==============================================================================
+   Filtered Indexes
+============================================================================== */
+
+-- Test Query: Select Customers where Country is 'USA' 
+SELECT *
+FROM Sales.Customers
+WHERE Country = 'USA';

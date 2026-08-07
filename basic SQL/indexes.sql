@@ -196,3 +196,10 @@ LEFT JOIN sys.dm_db_index_usage_stats s
     ON s.object_id = idx.object_id
     AND s.index_id = idx.index_id
 ORDER BY tbl.name, idx.name;
+
+/* ==============================================================================
+   Monitor Missing Indexes
+============================================================================== */
+
+SELECT * 
+FROM sys.dm_db_missing_index_details;

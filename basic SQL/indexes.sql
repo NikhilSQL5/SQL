@@ -241,3 +241,7 @@ ORDER BY sp.modification_counter DESC;
 -- Update statistics for a specific automatically created system statistic
 UPDATE STATISTICS Sales.DBCustomers _WA_Sys_00000001_6EF57B66;
 GO
+
+-- Update all statistics for the Sales.DBCustomers table
+UPDATE STATISTICS Sales.DBCustomers;
+GO

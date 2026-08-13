@@ -245,3 +245,7 @@ GO
 -- Update all statistics for the Sales.DBCustomers table
 UPDATE STATISTICS Sales.DBCustomers;
 GO
+
+-- Update statistics for all tables in the database
+EXEC sp_updatestats;
+GO

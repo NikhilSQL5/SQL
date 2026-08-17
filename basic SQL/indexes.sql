@@ -272,3 +272,8 @@ ORDER BY s.avg_fragmentation_in_percent DESC;
 ALTER INDEX idx_Customers_CS_Country 
 ON Sales.Customers REORGANIZE;
 GO
+
+-- Rebuild the index (full rebuild, more resource-intensive)
+ALTER INDEX idx_Customers_Country 
+ON Sales.Customers REBUILD;
+GO

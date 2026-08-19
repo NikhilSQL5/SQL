@@ -33,3 +33,13 @@ SELECT
 	type_desc,
 	boundary_value_on_right
 FROM sys.partition_functions
+
+/* ==============================================================================
+   Step 2: Create Filegroups
+============================================================================== */
+
+-- Create Filegroups in SalesDB
+ALTER DATABASE SalesDB ADD FILEGROUP FG_2023;
+ALTER DATABASE SalesDB ADD FILEGROUP FG_2024;
+ALTER DATABASE SalesDB ADD FILEGROUP FG_2025;
+ALTER DATABASE SalesDB ADD FILEGROUP FG_2026;
